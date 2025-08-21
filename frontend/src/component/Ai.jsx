@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 function Ai() {
   const { showSearch, setShowSearch } = useContext(shopDataContext);
   const navigate = useNavigate();
-
   const recognitionRef = useRef(null);
 
   useEffect(() => {
@@ -52,7 +51,12 @@ function Ai() {
     };
 
     recognition.onerror = (err) => {
-      console.error("Speech recognition error:", err);
+      // console.error("Speech recognition error:", err);
+  recognition.onerror = (event) => {
+  console.error("Speech recognition error:", event.error, event.message || "");
+  speak(`An error occurred: ${event.error}`);
+};
+
     };
 
     recognitionRef.current = recognition;
@@ -63,13 +67,22 @@ function Ai() {
     window.speechSynthesis.speak(utterance);
   }
 
-  function handleClick() {
+  async function handleClick() {
+  try {
+    await navigator.mediaDevices.getUserMedia({ audio: true });
+
     if (recognitionRef.current) {
       recognitionRef.current.start();
     } else {
       console.log("Speech Recognition not available.");
     }
+  } catch (error) {
+    console.error("Microphone access denied or not available:", error);
+    speak("Microphone access is needed. Please check your browser settings.");
+    alert("Microphone access is blocked or not available.");
   }
+}
+
 
   return (
     <div
