@@ -13,14 +13,15 @@ import orderRoutes from "./routes/orderRoutes.js";
 let port = process.env.PORT || 6000;
 const app = express();
 
-app.use(express.json());
-app.use(cookieParser());
 app.use(
   cors({
     origin: ["https://onecart-583n.onrender.com", "https://onecart-admin-3hxe.onrender.com"],
     credentials: true,
   })
 );
+
+app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
