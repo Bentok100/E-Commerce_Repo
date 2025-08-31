@@ -8,11 +8,11 @@ import { FaCircleUser } from "react-icons/fa6";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { MdContacts } from "react-icons/md";
 import { useContext } from "react";
-import { userDataContext } from "../context/userContext";
+import { userDataContext } from "../context/UserContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { authDataContext } from "../context/authContext";
+import { authDataContext } from "../context/AuthContext";
 import { shopDataContext } from "../context/ShopContext";
 
 function Nav() {
