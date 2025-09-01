@@ -43,12 +43,14 @@ function Login() {
       let user = response.user;
       let name = user.displayName;
       let email = user.email;
+      
+    const idToken = await user.getIdToken();
 
-      const result = await axios.post(
-        serverUrl + "/api/auth/googlelogin",
-        { name, email },
-        { withCredentials: true }
-      );
+    const result = await axios.post(
+      serverUrl + "/api/auth/googlelogin",
+      { token: idToken }, 
+      { withCredentials: true }
+    );
 
       console.log(result.data);
       getCurrentUser();
