@@ -89,7 +89,7 @@ function Ai() {
       className="fixed lg:bottom-[20px] md:bottom-[40px] bottom-[80px] left-[2%]"
       onClick={handleClick}
     >
-      <img src={ai} alt="AI voice assistant" className="w-[100px] cursor-pointer rounded-2xl" />
+      <img src={ai} alt="AI voice assistant" className="w-[69px] cursor-pointer rounded-2xl" />
     </div>
   );
 }
