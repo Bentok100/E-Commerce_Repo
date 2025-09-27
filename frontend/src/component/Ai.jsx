@@ -84,9 +84,9 @@ function Ai() {
 }
 
 
-  return (
+ return (
     <div
-      className="fixed lg:bottom-[20px] md:bottom-[40px] bottom-[80px] left-[2%]"
+      className="fixed lg:bottom-[0.2px] md:bottom-[40px] bottom-[80px] left-[0.3%] "
       onClick={handleClick}
     >
       <img src={ai} alt="AI voice assistant" className="w-[69px] cursor-pointer rounded-2xl" />
