@@ -3,71 +3,75 @@ import logo from "../assets/logo.png";
 
 function Footer() {
   return (
-    <div className="w-[100%] md:h-[36vh] h-[21vh] mb-[77px] md:mb-[0px]">
-      <div className="w-[100%] md:h-[30vh] h-[15vh] md:mb-[0px] bg-[#dbfcfcec] flex items-center justify-center md:px-[50px] px-[5px] ">
-        <div className="md:w-[30%] w-[35%] h-[100%] flex items-start justify-center flex-col gap-[5px]">
-          <div className="flex items-start justify-start gap-[5px] mt-[10px] md:mt-[40px]">
+    <div className="w-full mb-20 md:mb-0">
+      <div className="w-full bg-[#dbfcfcec] flex flex-col md:flex-row items-center justify-between px-4 md:px-12 py-6 gap-6 md:gap-0">
+        {/* Left Section - Logo & Description */}
+        <div className="w-full md:w-1/3 flex flex-col items-start gap-2">
+          <div className="flex items-center gap-2">
             <img
               src={logo}
               alt=""
-              className="md:w-[40px] md:h-[40px] w-[30px] h-[30px]"
+              className="w-8 h-8 md:w-10 md:h-10"
             />
-            <p className="text-[19px] md:text-[20px] text-[black] ">OneCart</p>
+            <p className="text-lg md:text-xl text-black font-semibold">
+              OneCart
+            </p>
           </div>
-          <p className="text-[15px] text-[#1e2223] hidden md:block">
+          <p className="text-sm text-[#1e2223] hidden md:block">
             OneCart is your all-in-one online shopping destination, offering
-            top-quality products, unbeatable deals, and fast delivery-all backed
+            top-quality products, unbeatable deals, and fast delivery—all backed
             by trusted service designed to make your life easier every day.
           </p>
-          <p className="text-[15px] text-[#1e2223] flex md:hidden">
+          <p className="text-sm text-[#1e2223] md:hidden">
             Fast. Easy. Reliable. OneCart Shopping
           </p>
         </div>
-        <div className="md:w-[25%] w-[30%] h-[100%] flex items-center justify-center flex-col text-center">
-          <div className="flex items-center justify-center gap-[5px] mt-[10px] md:mt-[40px]">
-            <p className="text-[19px] md:text-[20px] text-[#1e2223] font-sans">
-              COMPANY
-            </p>
-          </div>
-          <ul>
-            <li className="text-[15px] text-[#1e2223] hidden md:block cursor-pointer">
+
+        {/* Middle Section - Company Links */}
+        <div className="w-full md:w-1/4 flex flex-col items-center text-center gap-2">
+          <p className="text-lg md:text-xl text-[#1e2223] font-sans font-semibold">
+            COMPANY
+          </p>
+          <ul className="flex flex-col gap-1">
+            <li className="text-sm text-[#1e2223] hidden md:block cursor-pointer">
               Home
             </li>
-            <li className="text-[15px] text-[#1e2223] cursor-pointer">
+            <li className="text-sm text-[#1e2223] cursor-pointer">
               About us
             </li>
-            <li className="text-[15px] text-[#1e2223] hidden md:block cursor-pointer">
+            <li className="text-sm text-[#1e2223] hidden md:block cursor-pointer">
               Delivery
             </li>
-            <li className="text-[15px] text-[#1e2223]  cursor-pointer">
+            <li className="text-sm text-[#1e2223] cursor-pointer">
               Privacy Policy
             </li>
           </ul>
         </div>
 
-        <div className="w-[25%] h-[40%] flex items-center justify-center flex-col text-center">
-          <div className="flex items-center justify-center gap-[5px] mt-[10px] md:mt-[40px]">
-            <p className="text-[19px] md:text-[20px] text-[#1e2223] font-sans">
-              GET IN TOUCH
-            </p>
-          </div>
-
-          <ul>
-            <li className="text-[15px] text-[#1e2223]">+91-9876543210</li>
-            <li className="text-[15px] text-[#1e2223]">contact@onecart.com</li>
-            <li className="text-[15px] text-[#1e2223] hidden md:block">
+        {/* Right Section - Contact Info */}
+        <div className="w-full md:w-1/4 flex flex-col items-center text-center gap-2">
+          <p className="text-lg md:text-xl text-[#1e2223] font-sans font-semibold">
+            GET IN TOUCH
+          </p>
+          <ul className="flex flex-col gap-1">
+            <li className="text-sm text-[#1e2223]">+91-9876543210</li>
+            <li className="text-sm text-[#1e2223]">contact@onecart.com</li>
+            <li className="text-sm text-[#1e2223] hidden md:block">
               +1-123-456-7890
             </li>
-            <li className="text-[15px] text-[#1e2223] hidden md:block">
+            <li className="text-sm text-[#1e2223] hidden md:block">
               admin@onecart.com
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="w-[100%] h-[1px] bg-slate-400"></div>
-      <div className="w-[100%] h-[5vh] bg-[#dbfcfcec] flex items-center justify-center">
-        Copyright 2025@onecart.com-All Rights Reserved
+      {/* Divider */}
+      <div className="w-full h-px bg-slate-400"></div>
+
+      {/* Bottom Bar */}
+      <div className="w-full h-[8vh] bg-[#dbfcfcec] flex items-center justify-center text-sm md:text-base text-[#1e2223] text-center px-4">
+        Copyright 2025@onecart.com — All Rights Reserved
       </div>
     </div>
   );
