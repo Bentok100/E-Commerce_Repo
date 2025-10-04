@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import google from "../assets/google-icon-isolated-white-background_1273375-828.jpg";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoEye } from "react-icons/io5";
-import { authDataContext } from "../context/AuthContext";
-import { userDataContext } from "../context/UserContext";
+import { authDataContext } from "../context/authContext";
+import { userDataContext } from "../context/userContext";
 import axios from "axios";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../utils/Firebase";
@@ -60,42 +60,43 @@ function Login() {
     }
   };
   return (
-    <div className="w-[100vw] h-[100vh] bg-gradient-to-l from-[#141414] to-[#0c2025] text-[white] flex flex-col items-center justify-start">
+    <div className="w-full min-h-screen bg-gradient-to-l from-[#141414] to-[#0c2025] text-white flex flex-col items-center justify-start">
       <div
-        className="w-[100%] h-[80px] flex items-center justify-start px-[30px] gap-[10px] cursor-pointer"
+        className="w-full h-20 flex items-center justify-start px-6 gap-2 cursor-pointer"
         onClick={() => navigate("/")}
       >
-        <img className="w-[40px]" src={logo} alt="" />
+        <img className="w-10 h-10" src={logo} alt="" />
         <h1 className="text-[22px] font-sans">OneCart</h1>
       </div>
 
-      <div className="w-[100%] h-[100px] flex items-center justify-center flex-col gap-[10px] ">
-        <span className="text-[25px] font-semibold ">Login Page</span>
-        <span className="text-[16px]">
+      <div className="w-full mt-4 flex flex-col items-center justify-center gap-2 text-center">
+        <span className="text-2xl font-semibold">Login Page</span>
+        <span className="text-base text-gray-300">
           Welcome to OneChart, Place your order
         </span>
       </div>
 
-      <div className="max-w-[600px] w-[90%] h-[500px] bg-[#00000025] border-[1px] border-[#96969635] backdrop:blur-2xl rounded-lg flex items-center justify-center">
+      <div className="w-[90%] max-w-md bg-[#00000025] border border-[#96969635] backdrop:blur-2xl rounded-lg mt-6 p-6">
         <form
           action=""
-          className="w-[90%] h-[90%] flex flex-col items-center justify-start gap-[20px]"
+          className="w-full flex flex-col items-center justify-start gap-5"
         >
           <div
-            className="w-[90%] h-[50px] bg-[#42656cae] rounded-lg flex items-center justify-center gap-[10px] py-[20px] cursor-pointer"
+            className="w-full flex items-center justify-center gap-3 bg-[#42656cae] hover:bg-[#38575da2] transition text-white py-3 rounded-lg cursor-pointer"
             onClick={googleLogin}
           >
-            <img src={google} alt="" className="w-[35px] h-[35px]" /> Login
-            Account with Google
+            <img src={google} alt="" className="w-8 h-8" /> Login Account with Google
           </div>
-          <div className="w-[100%] h-[20px] flex items-center justify-center gap-[10px]">
-            <div className="w-[40%] h-[1px] bg-[#96969635]"></div> OR{" "}
-            <div className="w-[40%] h-[1px] bg-[#96969635]"></div>
+
+          <div className="w-full flex items-center justify-center gap-4 text-gray-400">
+            <div className="w-1/3 h-px bg-[#96969635]"></div> OR{" "}
+            <div className="w-1/3 h-px bg-[#96969635]"></div>
           </div>
-          <div className="w-[90%] h-[400px] flex flex-col items-center justify-center gap-[15px] relative">
+
+          <div className="w-full flex flex-col items-center justify-center gap-4 relative">
             <input
               type="text"
-              className="w-[100%] h-[50px] border-[2px] border-[#96969635] backdrop:blur-sm rounded-lg shadow-lg bg-transparent placeholder-[#ffffffc7] px-[20px] font-semibold"
+              className="w-full h-12 border-2 border-[#96969635] backdrop:blur-sm rounded-lg shadow-lg bg-transparent placeholder-[#ffffffc7] px-4 font-semibold"
               placeholder="Email"
               required
               onChange={(e) => setEmail(e.target.value)}
@@ -104,7 +105,7 @@ function Login() {
 
             <input
               type={show ? "text" : "password"}
-              className="w-[100%] h-[50px] border-[2px] border-[#96969635] backdrop:blur-sm rounded-lg shadow-lg bg-transparent placeholder-[#ffffffc7] px-[20px] font-semibold"
+              className="w-full h-12 border-2 border-[#96969635] backdrop:blur-sm rounded-lg shadow-lg bg-transparent placeholder-[#ffffffc7] px-4 font-semibold"
               placeholder="Password"
               required
               onChange={(e) => setPassword(e.target.value)}
@@ -112,23 +113,23 @@ function Login() {
             />
             {!show && (
               <IoEyeOutline
-                className="w-[20px] h-[20px] cursor-pointer absolute right-[5%] bottom-[57%]"
+                className="w-5 h-5 cursor-pointer absolute right-4 top-[74px]"
                 onClick={() => setShow((prev) => !prev)}
               />
             )}
             {show && (
               <IoEye
-                className="w-[20px] h-[20px] cursor-pointer absolute right-[5%] bottom-[57%]"
+                className="w-5 h-5 cursor-pointer absolute right-4 top-[74px]"
                 onClick={() => setShow((prev) => !prev)}
               />
             )}
             <button
-              className="w-[100%] h-[50px] bg-[#6060f5] rounded-lg flex items-center justify-center mt-[20px] text-[17px] font-semibold"
+              className="w-full h-12 bg-[#6060f5] hover:bg-[#4d4df0] transition rounded-lg flex items-center justify-center text-[17px] font-semibold mt-2"
               onClick={handleLogin}
             >
               Login
             </button>
-            <p className="flex gap-[10px]">
+            <p className="flex flex-wrap justify-center gap-2 text-sm text-gray-300 text-center">
               You haven't any account?{" "}
               <span
                 className="text-[#5555f6cf] text-[17px] font-semibold cursor-pointer"
