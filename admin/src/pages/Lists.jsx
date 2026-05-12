@@ -21,7 +21,7 @@ function Lists() {
   const removeList = async (id) => {
     try {
       const result = await axios.post(
-        `${serverUrl}/api/product/remove/${id},`,
+        `${serverUrl}/api/product/remove/${id}`,
         {},
         { withCredentials: true }
       );
